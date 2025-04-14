@@ -1,14 +1,10 @@
 import React from 'react'
+import Title from './Title'
 
 function Tour() {
   return (
     <section className="section" id="tours">
-      <div className="section-title">
-        <h2>
-          featured <span>tours</span>
-        </h2>
-      </div>
-
+      <Title title="featured" subTitle="Tours" />
       <div className="section-center featured-center">
         <article className="tour-card">
           <div className="tour-img-container">
