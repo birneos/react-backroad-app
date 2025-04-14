@@ -1,10 +1,12 @@
 import React from 'react'
 import { pageLinks, socialLinks } from '../data.js'
+import PageLinks from './PageLinks.js'
 
 function Footer() {
   return (
     <footer className="section footer">
-      <ul className="footer-links">
+      <PageLinks parentClass="footer-links" itemClass="footer-link" />
+      {/* <ul className="footer-links">
         {pageLinks.map((link) => {
           return (
             <li key={link.id}>
@@ -14,7 +16,7 @@ function Footer() {
             </li>
           )
         })}
-      </ul>
+      </ul> */}
       <ul className="footer-icons">
         {socialLinks.map((link) => {
           return (
