@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from './../images/logo.svg'
-import { pageLinks } from './../data.js'
+import { pageLinks, socialLinks } from './../data.js'
 
 function NavBar() {
   return (
@@ -54,7 +54,21 @@ function NavBar() {
         </ul>
 
         <ul className="nav-icons">
-          <li>
+          {socialLinks.map((link) => {
+            return (
+              <li key={link.id}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  className="nav-icon"
+                  rel="noreferrer"
+                >
+                  <i className={link.icon}></i>
+                </a>
+              </li>
+            )
+          })}
+          {/* <li>
             <a
               href="https://www.twitter.com"
               target="_blank"
@@ -83,7 +97,7 @@ function NavBar() {
             >
               <i className="fab fa-squarespace"></i>
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>
