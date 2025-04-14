@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from './../images/logo.svg'
+import { pageLinks } from './../data.js'
 
 function NavBar() {
   return (
@@ -13,7 +14,17 @@ function NavBar() {
         </div>
         {/* <!-- left this comment on purpose --> */}
         <ul className="nav-links" id="nav-links">
-          <li>
+          {pageLinks.map((link) => {
+            return (
+              <li key={link.id}>
+                <a href={`#${link.text}`} className="nav-link">
+                  {link.text}
+                </a>
+              </li>
+            )
+          })}
+
+          {/* <li>
             <a href="#home" className="nav-link">
               {' '}
               home{' '}
@@ -39,7 +50,7 @@ function NavBar() {
               {' '}
               tours
             </a>
-          </li>
+          </li> */}
         </ul>
 
         <ul className="nav-icons">
