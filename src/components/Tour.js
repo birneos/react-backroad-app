@@ -1,40 +1,29 @@
 import React from 'react'
-import Title from './Title'
-import { tours } from '../data.js'
 
-function Tour() {
+const Tour = ({ image, date, title, text, location, duration, cost }) => {
   return (
-    <section className="section" id="tours">
-      <Title title="featured" subTitle="Tours" />
-      <div className="section-center featured-center">
-        {tours.map((tour) => {
-          return (
-            <article className="tour-card" key={tour.id}>
-              <div className="tour-img-container">
-                <img src={tour.image} className="tour-img" alt="" />
-                <p className="tour-date">{tour.date}</p>
-              </div>
-              <div className="tour-info">
-                <div className="tour-title">
-                  <h4>{tour.title}</h4>
-                </div>
-                <p>{tour.text}</p>
-                <div className="tour-footer">
-                  <p>
-                    <span>
-                      <i className="fas fa-map"></i>
-                    </span>
-                    {tour.location}
-                  </p>
-                  <p>{tour.duration} days</p>
-                  <p>from ${tour.cost}</p>
-                </div>
-              </div>
-            </article>
-          )
-        })}
+    <article className="tour-card">
+      <div className="tour-img-container">
+        <img src={image} className="tour-img" alt="" />
+        <p className="tour-date">{date}</p>
       </div>
-    </section>
+      <div className="tour-info">
+        <div className="tour-title">
+          <h4>{title}</h4>
+        </div>
+        <p>{text}</p>
+        <div className="tour-footer">
+          <p>
+            <span>
+              <i className="fas fa-map"></i>
+            </span>
+            {location}
+          </p>
+          <p>{duration} days</p>
+          <p>from ${cost}</p>
+        </div>
+      </div>
+    </article>
   )
 }
 
